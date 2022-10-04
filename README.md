@@ -15,13 +15,14 @@ In this article, I will be building a web application with an express server whi
 
 I like to think of the relationship between a client and a server as a waiter/waitress in a restaurant. When you select something on the menu, the waiter will return with your choice as represented by the diagram below:
 
-![](Clientmakesarequestonthemenu)
+### An Image Representation of the Client/Server Model:
+![An image representation of the client/server model](https://github.com/tawanda-profuse/Working-With-the-Express-Framework/blob/master/public/pictures/client-request.png?raw=true)
 
-The first thing I'll do is create a folder on my computer and name it 'Working With the Express Framework.' I have also added the repository to GitHub so you can access it via this [link]() by making a clone of the repository.
+The first thing I'll do is create a folder on my computer and name it 'Working With the Express Framework.' I have also added the repository to GitHub so you can access it via this [link](https://github.com/tawanda-profuse/Working-With-the-Express-Framework) by making a clone of the repository.
 
-Open the folder in VS Code and access your terminal. Type into the terminal; **npm init -y**. This initializes the node package manager which gives us access to all the modules within Node.js, including express. Next, I'll type **npm install express --save**. This line tells our package manager to include express in our project so that we may utilize it in our application. Make sure to follow the prompt that comes up in your terminal to enter information about the application.
+Open the folder in VS Code and access your terminal. Whether you've cloned my repository or started afresh, type into the terminal; **npm init -y**. This initializes the node package manager which gives us access to all the modules within Node.js, including express. Next, I'll type **npm install express --save**. This line tells our package manager to include express in our project so that we may utilize it in our application. Make sure to follow the prompt that comes up in your terminal to enter information about the application. These steps are not necessary is you are using the files I have provided.
 
-You will notice that a new file has been automatically created inside our previously created folder and it is called **package.json**. This folder contains important configuration information for our application to run successfully. If you are familiar with JSON you will understand how data is stored in a **.json** file but if you are new to the Javascript ecosystem then I suggest you learn about the JSON syntax by watching this [**youtube video**](https://www.youtube.com/watch?v=GpOO5iKzOmY) from freecodecamp or read this article: [JSON Tutorial: Learn JSON in 10 Minutes](https://beginnersbook.com/2015/04/json-tutorial/).
+You will notice that a new file has been automatically created inside our previously created folder and it is called **package.json**. This folder contains important configuration information for our application to run successfully. If you are familiar with JSON you will understand how data is stored in a **.json** file but if you are new to the Javascript ecosystem then I suggest you learn about the JSON syntax by watching this [**youtube video**](https://www.youtube.com/watch?v=GpOO5iKzOmY) from freeCodeCamp or read this article: [JSON Tutorial: Learn JSON in 10 Minutes](https://beginnersbook.com/2015/04/json-tutorial/).
 
 **Your package.json file looks similar to this:**
 ```
@@ -32,12 +33,12 @@ You will notice that a new file has been automatically created inside our previo
         "main": "server.js",
 
         "scripts": {
-            "start": "npm run"
+            "start": "node server.js"
         }
     }
 ```
 
-The **`"name":`** represents the field, and **`"working-with-the-express-framework"`** represents the value of the field. Some of the information in this file was captured when you created the application using the terminal. If this was represented in tabular form, it would look something like this:
+The **`"name":`** represents the field, and **`"working-with-the-express-framework"`** represents the value of the field. Some of the information in this file was captured from the responses when you created the application using the terminal. If this was represented in tabular form, it would look something like this:
 
 | name | version | description | main |
 |:---:| :---: | :---: | :---: |
