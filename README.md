@@ -13,7 +13,11 @@ In this article, I will be building a web application with an express server whi
 2.    Google Chrome.
 3.    Latest version of [Node.js](https://nodejs.org/).
 
-I like to think of a computer server as a waiter/waitress in a restaurant. When you select something on the menu, the waiter will return with your choice. The first thing I'll do is create a folder on my computer and name it 'Working With the Express Framework.' I have also added the repository to GitHub so you can access it via this [link]() by making a clone of the repository.
+I like to think of the relationship between a client and a server as a waiter/waitress in a restaurant. When you select something on the menu, the waiter will return with your choice as represented by the diagram below:
+
+![](Clientmakesarequestonthemenu)
+
+The first thing I'll do is create a folder on my computer and name it 'Working With the Express Framework.' I have also added the repository to GitHub so you can access it via this [link]() by making a clone of the repository.
 
 Open the folder in VS Code and access your terminal. Type into the terminal; **npm init -y**. This initializes the node package manager which gives us access to all the modules within Node.js, including express. Next, I'll type **npm install express --save**. This line tells our package manager to include express in our project so that we may utilize it in our application. Make sure to follow the prompt that comes up in your terminal to enter information about the application.
 
