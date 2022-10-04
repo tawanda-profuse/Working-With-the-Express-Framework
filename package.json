@@ -1,0 +1,17 @@
+{
+  "name": "working-with-the-express-framework",
+  "version": "1.0.0",
+  "description": "Express is a web application framework for building the backend of web sites using the Javascript programming language. It was also developed using Javascript and runs on the Node.js platform as an installable package. The first release, **version 0.12**, was on 22 May 2010 and it continues to be upgraded due to large developer support in the Javascript open source community.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1",
+    "nodemon": "^2.0.20"
+  }
+}
