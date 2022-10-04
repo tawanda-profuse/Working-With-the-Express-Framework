@@ -1,6 +1,58 @@
 *{
-    background: red;
+    background: lightgreen;
+}
+.intro{
+    margin: 10px auto;
 }
 h1{
     text-align: center;
+    text-transform: uppercase;
+    color: brown;
+}
+img{
+    width: 300px;
+    height: 150px;
+}
+img:hover{
+    cursor: pointer;
+}
+.jungle-info{
+    display: flex;
+}
+.jungle-info h3{
+    border-left: 2px solid black;
+    margin-left: 50px;
+    padding-left: 10px;
+}
+.jungle{
+    padding-left: 10%;
+}
+footer {
+    background-color: brown;
+    padding: 2px 2px;
+}
+footer h3{
+    background-color: brown;   
+    text-align: center;
+}
+table{
+    margin: 50px auto;
+    text-align: center;
+    border: 2px solid brown;
+    width: 50%;
+    font-size: 20px;
+}
+
+th, td{
+    border: 2px solid brown;
+}
+th{
+    font-size: 28px;
+}
+.diet{
+    font-size: 24px;
+}
+.red{
+    color: red;
+    font-weight: bold;
 }

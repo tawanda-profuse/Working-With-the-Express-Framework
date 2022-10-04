@@ -117,4 +117,10 @@ You will notice that every time you make a change to your source files and save,
 The dependencies field inside **package.json** will now look like this:
 ![](npm-json)
 
+## The Waiter and The Client
+
+This is a simple example of a server that accesses a web page when requested by the user. This relates to the scenario I previously mentioned of a waiter in a restaurant. When a user chooses the available web page, then the server/waiter returns a relevant response. The advanced web applications we use everyday are an improvement from this concept, they need to scale when you consider factors such as user base, security, and database management.
+
+If you enjoyed this article, let me know [your opinion](https://andrew-tech.netlify.app/#contact).
+
 ### ~ Thank you for reading
