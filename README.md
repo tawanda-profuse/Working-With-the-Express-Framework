@@ -1,4 +1,4 @@
-Express is a web application framework for building the backend of web sites using the Javascript programming language. It was also developed using Javascript and runs on the Node.js platform as an installable package. The first release, **version 0.12**, was on 22 May 2010 and it continues to be upgraded due to a large developer support in the Javascript open source community.
+Express is a web application framework for building the business logic of web sites using the Javascript programming language. It was also developed using Javascript and runs on the Node.js platform as an installable package. The first release, **version 0.12**, was on 22 May 2010 and it continues to be upgraded due to a large developer support in the Javascript open source community.
 
 The express.js main repository is found at [https://github.com/expressjs/express](https://github.com/expressjs/express), and it is maintained under the [MIT license](https://en.wikipedia.org/wiki/MIT_License) so you are free to make a copy of it. The website is [expressjs.com](https://expressjs.com/). Express is used by companies like Fox Sports, PayPal, Uber, and IBM to run their backend systems. Express is used for:
 
@@ -20,7 +20,7 @@ I like to think of the relationship between a client and a server as a waiter/wa
 
 The first thing I'll do is create a folder on my computer and name it 'Working With the Express Framework.' I have also added the repository to GitHub so you can access it via this [link](https://github.com/tawanda-profuse/Working-With-the-Express-Framework) by making a clone of the repository.
 
-Open the folder in VS Code and access your terminal. Whether you've cloned my repository or started afresh, type into the terminal; **npm init -y**. This initializes the node package manager which gives us access to all the modules within Node.js, including express. Next, I'll type **npm install express --save**. This line tells our package manager to include express in our project so that we may utilize it in our application. Make sure to follow the prompt that comes up in your terminal to enter information about the application. These steps are not necessary if you are using the files I have provided.
+Open the folder in VS Code or your preferred editor, and access your terminal. Type into the terminal; **npm init -y**. If you've cloned my repository, you should use the **npm install** command which installs the node_modules on your local device. This initializes the node package manager which gives us access to all the modules within Node.js, including express. Next, I'll type **npm install express --save**. This line tells our package manager to include express in our project so that we may utilize it in our application. Make sure to follow the prompt that comes up in your terminal to enter information about the application. These steps are not necessary if you are using the files I have provided.
 
 You will notice that a new file has been automatically created inside our previously created folder and it is called **package.json**. This folder contains important configuration information for our application to run successfully. If you are familiar with JSON you will understand how data is stored in a **.json** file but if you are new to the Javascript ecosystem then I suggest you learn about the JSON syntax by watching this [**youtube video**](https://www.youtube.com/watch?v=GpOO5iKzOmY) from freeCodeCamp or read this article: [JSON Tutorial: Learn JSON in 10 Minutes](https://beginnersbook.com/2015/04/json-tutorial/).
 
@@ -69,9 +69,9 @@ You will need to write the following in *server.js*:
     })
 ```
 
-The line that says `const express = require('express')` imports the express library into our file. We then define the variable `app`, which initializes the app. The `app.get('/')` method is used to read the requested path and send the response which is an **index.html** file. We then tell our server to listen and in this case it is available on port 2000.
+The line that says `const express = require('express')` imports the express library into our file. We then define the variable `app`, which initializes the app. The `app.get('/')` method is used to read the requested path and send the response which is an **index.html** file. We then tell our server to listen on port 2000.
 
-Let's go ahead and create our **index.html** which is the home page of our web site. Create it in your folder, please note that the name of your file should have the **.html** extension and should be the same as the file name in server.js. Write some output in your HTML file which will be displayed in the browser. If you can't come up with anything, refer to [this](https://github.com/tawanda-profuse/sweetooth-ice-cream) project I made for inspiration. Or you could write the following code in your html file:
+Let's go ahead and create our **index.html** which is the home page of our web site. Create it in your folder, please note that the name of your file should have the **.html** extension and should be the same as the file name in server.js. Writing some HTML file will be displayed in the browser. If you can't come up with anything, refer to [this](https://github.com/tawanda-profuse/sweetooth-ice-cream) project I made for inspiration. Or you could write the following code in your html file:
 
 ```
   <!DOCTYPE html>
@@ -114,12 +114,14 @@ Type **npm run start** into your terminal. After a few seconds you should notice
 
 You will notice that every time you make a change to your source files and save, you will have to manually restart your server. This can be a tiresome task, so *Node* has a package to assist with this and to install it, type into your terminal; **npm install nodemon**. If it was installed successfully, you will see **"nodemon"** under the **"dependencies"** field in your package.json file. This time, if you make changes to your source files, you won't have to manually restart your server. 
 
+**NB:** Npm commands will not work without an internet connection.
+
 The dependencies field inside **package.json** will now look like this:
-![](npm-json)
+![Screenshot of a package.json file](https://github.com/tawanda-profuse/Working-With-the-Express-Framework/blob/master/public/pictures/npm-json.png?raw=true)
 
 ## The Waiter and The Client
 
-This is a simple example of a server that accesses a web page when requested by the user. This relates to the scenario I previously mentioned of a waiter in a restaurant. When a user chooses the available web page, then the server/waiter returns a relevant response. The advanced web applications we use everyday are an improvement from this concept, they need to scale when you consider factors such as user base, security, and database management.
+This is a simple example of a server that accesses a web page when requested by the user. This relates to the scenario I previously mentioned of a waiter in a restaurant. When a user asks for the available web page, then the server/waiter returns a relevant response. The advanced web applications we use everyday are an improvement from this concept, they just scale when you consider factors such as user base, security, and database management.
 
 If you enjoyed this article, let me know [your opinion](https://andrew-tech.netlify.app/#contact).
 
