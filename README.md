@@ -20,7 +20,7 @@ I like to think of the relationship between a client and a server as a waiter/wa
 
 The first thing I'll do is create a folder on my computer and name it 'Working With the Express Framework.' I have also added the repository to GitHub so you can access it via this [link](https://github.com/tawanda-profuse/Working-With-the-Express-Framework) by making a clone of the repository.
 
-Open the folder in VS Code and access your terminal. Whether you've cloned my repository or started afresh, type into the terminal; **npm init -y**. This initializes the node package manager which gives us access to all the modules within Node.js, including express. Next, I'll type **npm install express --save**. This line tells our package manager to include express in our project so that we may utilize it in our application. Make sure to follow the prompt that comes up in your terminal to enter information about the application. These steps are not necessary is you are using the files I have provided.
+Open the folder in VS Code and access your terminal. Whether you've cloned my repository or started afresh, type into the terminal; **npm init -y**. This initializes the node package manager which gives us access to all the modules within Node.js, including express. Next, I'll type **npm install express --save**. This line tells our package manager to include express in our project so that we may utilize it in our application. Make sure to follow the prompt that comes up in your terminal to enter information about the application. These steps are not necessary if you are using the files I have provided.
 
 You will notice that a new file has been automatically created inside our previously created folder and it is called **package.json**. This folder contains important configuration information for our application to run successfully. If you are familiar with JSON you will understand how data is stored in a **.json** file but if you are new to the Javascript ecosystem then I suggest you learn about the JSON syntax by watching this [**youtube video**](https://www.youtube.com/watch?v=GpOO5iKzOmY) from freeCodeCamp or read this article: [JSON Tutorial: Learn JSON in 10 Minutes](https://beginnersbook.com/2015/04/json-tutorial/).
 
@@ -48,7 +48,7 @@ Now, in order to use express we will need a folder to write code in. Create a fi
 
 ## Configuring The Server
 
-Type the following in *server.js*:
+You will need to write the following in *server.js*:
 
 ```
     const express = require('express');
@@ -56,52 +56,65 @@ Type the following in *server.js*:
     const app = express();
 
     app.get('/', (req, res) => {
-        res.send("index.html");
+      res.sendFile(`${__dirname}/index.html`, (err) => {
+        if (err) {
+          console.log(err);
+          res.end(err.message);
+       }
     });
+  });
 
     app.listen(2000, () => {
-        console.log('Server has started listening');
+        console.log('Server has started listening on port 2000');
     })
 ```
 
-The line that says `const express = require('express')` imports the express library into our file. We then define the variable `app`, which initializes the app. The `app.get('/')` method is used to read the path request and send the response which is an **index.html** file. We then tell our server to listen and in this case it is available on port 2000.
+The line that says `const express = require('express')` imports the express library into our file. We then define the variable `app`, which initializes the app. The `app.get('/')` method is used to read the requested path and send the response which is an **index.html** file. We then tell our server to listen and in this case it is available on port 2000.
 
-Let's go ahead and create our **index.html** which is the home page of our web site. Create a folder in your folder, please note that the name of your file should have the **.html** extension and should be the same as the file name in server.js. Write some output in your HTML file which will be displayed in the browser. If you can't come up with anything, refer to [this]() project I made for inspiration. Or you could write the following code in your html file:
+Let's go ahead and create our **index.html** which is the home page of our web site. Create it in your folder, please note that the name of your file should have the **.html** extension and should be the same as the file name in server.js. Write some output in your HTML file which will be displayed in the browser. If you can't come up with anything, refer to [this](https://github.com/tawanda-profuse/sweetooth-ice-cream) project I made for inspiration. Or you could write the following code in your html file:
 
 ```
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link id="main-css" rel="stylesheet" href="styles.css">
-  <title>Types of Dinosaurs</title>
-</head>
-<body>
-  <div>
-    <h1>Types of Dinosaurs</h1>
-  </div>
-</body>
-</html>
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link id="main-css" rel="stylesheet" href="styles.css">
+    <title>Types of Dinosaurs</title>
+  </head>
+  <body>
+    <div>
+      <h1>Types of Dinosaurs</h1>
+    </div>
+  </body>
+  </html>
 ```
 
-For a better understanding of the HTML language, you can have a look at my blog post, [***Exploring Hypertext Markup Language***](https://github.com/tawanda-profuse/Exploring-Hypertext-Markup-Language--HTML-) which goes into details. The text we have written in our HTML file will render as a web page on the port 2000.
+For a better understanding of the HTML language, you can have a look at my blog post, [***Exploring the Hypertext Markup Language***](https://github.com/tawanda-profuse/Exploring-Hypertext-Markup-Language--HTML-) which goes into details. The text we have written in our HTML file will render as a web page on the port 2000.
 
 ## Styling The Web Page
 
-Add the following code to your **server.js** file; `app.use(express.static('public'));`. This ensures that all items inside the "**public**" folder are included with our HTML file. Now you can create a folder called **public** in the root of your folder, then create a file and name it **styles.css**. Add some styles to the file to improve the HTML file like this:
+Add the following code to your **server.js** file; `app.use(express.static('public'));`. This ensures that all items inside the "**public**" folder are included with our HTML file. Now you can create a folder called **public** in the root of your folder, then create a file inside it and name it **styles.css**. Add some styles to the file to improve the HTML file like this:
 
 ```
-
+*{
+    background: red;
+}
+h1{
+    text-align: center;
+}
 ```
 
 ## Spinning Up the Server
 
-Type **npm run start** into your console. After a few seconds you should notice the terminal output that says "*Server has started listening*." This indicates that your application is live and you can visit it on your browser. If you open your browser and search for ***localhost:2000***, your web page will be loaded to the screen.
+Type **npm run start** into your terminal. After a few seconds you should notice the terminal output that says "*Server has started listening on port 2000*." This indicates that your application is live and you can visit it on your browser. If you open your browser and search for ***localhost:2000***, your web page will be loaded to the screen.
 
 ## Installing Nodemon
 
-You will notice that every time you make a change to your source files and save, the server will stop. Then you have to start it again. This can be a tiresome task, so *Node* has a package to solve this and to install it, type into your terminal; **npm install nodemon**. If it was installed successfully, you will see **"nodemon"** under the **"dependencies"** field in your package.json file. This time, if you make changes to your source files, you won't have to manually restart your server. 
+You will notice that every time you make a change to your source files and save, you will have to manually restart your server. This can be a tiresome task, so *Node* has a package to assist with this and to install it, type into your terminal; **npm install nodemon**. If it was installed successfully, you will see **"nodemon"** under the **"dependencies"** field in your package.json file. This time, if you make changes to your source files, you won't have to manually restart your server. 
+
+The dependencies field inside **package.json** will now look like this:
+![](npm-json)
 
 ### ~ Thank you for reading
